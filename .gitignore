@@ -1,5 +1,5 @@
 .venv/
+.vscode/
+.ipynb_checkpoints/
 .env
 old_data/
-# Ignore out directory temporarily
-out/
