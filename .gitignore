@@ -1,1 +1,5 @@
 .venv/
+.env
+old_data/
+# Ignore out directory temporarily
+out/
