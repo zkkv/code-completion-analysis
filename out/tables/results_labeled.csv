@@ -1,0 +1,150 @@
+File,Original,Suggestion,Label,Comments
+animal.py," 4
+		self.sound = ""M"," 10
+		self.sound = ""M",Close match,
+animal.py,"it__(self):
+		self.weight_kg = 10
+		self","it__(self):
+		self.weight_kg = 1
+		self",Close match,
+animal.py,"f.sound = ""Bark""
+
+
+c","f.sound = ""Bark""
+
+c",Equivalent match,
+animal.py,"		self.weight_kg = 10
+		self.sound = ""Ba","		self.weight_kg = 4
+		self.sound = ""woof""
+
+
+class Cat:
+	def __init__(self):
+		self.weight_kg = 4
+		self.sound = """,Syntactic match,
+animal.py,"Bark""
+
+
+class Cat:
+	def __init","Bark""
+
+class Cat:
+	def __init",Equivalent match,
+add.py,"mbers
+def add(a, b):
+	return a + b","mbers
+def sum(a, b):
+    return a + b
+
+# Return difference of two numbers
+def diff(a, b):
+    return a - b
+
+# Return product of two numbers
+def prod(a, b",Semantic match,
+add.py,"two numbers
+def add(a, b):
+	return a + b","all the numbers in the array
+def sum_array(arr):
+    return sum(arr)
+
+# Print the sum of all the numbers in the array
+print(sum_array([1, 2, 3, 4",Total miss,
+add.py,"urn sum of two numbers
+def add(a, b):
+	return",urn,Syntactic match,
+add.py,"um of two numbers
+def add(a, b):
+	return a","um of a and b
+def sum(a, b):
+    return a",Equivalent match,
+add.py," of two numbers
+def add(a, b"," of two numbers
+def add(a, b",Exact match,
+permute.py," = nums.copy()
+		delet"," = nums[:i] + nums[i+1:]
+		delet",Total miss,
+permute.py," permute(nums: List[int]) -> List[List[int]]:
+	if"," permute(self, nums):
+	if",Equivalent match,"I realized that I removed `self` from the parameter list, so the LM actually made a reasonable assumption that it should be there"
+permute.py,ms: List[int,ms: List[int,Exact match,
+permute.py,", [nums[1], nums[0]]]
+
+	res = []
+
+	for ","]
+	res = []
+	for ",Syntactic match,
+permute.py,"ist[i]
+","ist.pop(i)
+",Syntactic match,
+matrix_reshape.py,"	n = len(mat[0])
+
+	if m * n != r * c:
+		return m","	n = len(mat[0])
+
+	if r * c!= m * n:
+		raise ValueError(""Invalid matrix size"")
+
+	if r < 1 or c < 1:
+		raise ValueError(""Invalid matrix size",Semantic match,
+matrix_reshape.py,"es] = mat[i_mat][j_mat]
+
+	r","es] = mat[i_mat][j_mat]
+
+	r",Exact match,
+matrix_reshape.py,	for index in range(m * ,"	for index in range(r * c, m * ",Syntactic match,
+matrix_reshape.py,"(mat[0])
+
+	if m * n != r * c:
+		r","(mat[0])
+
+	if r * c!= m * n:
+		r",Equivalent match,
+matrix_reshape.py,= inde,= inde,Exact match,
+my_sqrt.py,"mid == x:
+			re","mid == x:
+			re",Exact match,
+my_sqrt.py,nt) -,nt) -,Exact match,
+my_sqrt.py,turn left -,turn,Syntactic match,
+my_sqrt.py,"	left = 0
+	right = 2**30
+
+	while left < ri","	left, right = 1, x
+	while ri",Syntactic match,
+my_sqrt.py,"mid
+		elif mid *","mid
+		elif",Semantic match,
+plate-utils.py,"t numpy as np
+
+def get_contours(pl","t numpy as np
+from scipy.spatial.distance import cdist
+from scipy.spatial.distance import pdist
+from scipy.spatial.distance import squareform
+from scipy.spatial.distance import square
+from scipy.spatial.distance",Total miss,
+plate-utils.py,"turn cnts[0]
+
+
+def create_sift_descriptor(image)","turn cnts, output_image
+
+def get_descriptors(image)",Syntactic match,
+plate-utils.py,"contours, output_image = cv2.fi","canny_image = cv2.morphologyEx(canny_image, cv2.MORPH_ERODE, np.ones((2, 2)))
+
+    contours, _ = cv2.fi",Close match,
+plate-utils.py,"00)
+    canny_image = cv2.mo","50)
+    canny_image = cv2.dilate(canny_image, np.ones((2, 2)))
+    canny_image = cv2.erode(canny_image, np.ones((",Total miss,
+plate-utils.py,"COLOR_BGR2GRAY)
+    else:
+        im","COLOR_BGR2GRAY)
+    else:
+        img = image
+
+    sift = cv2.SIFT_create()
+    _, descriptors = sift.detectAndCompute(img, None)
+    return descriptors
+
+
+def create_sift",Semantic match,
